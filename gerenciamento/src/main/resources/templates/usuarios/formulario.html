@@ -7,6 +7,28 @@
     <title>Cadastro de Usuários</title>
 </head>
 <body>
-    <h1>Cadastro de Usuários!</h1>
+    <h1>Cadastro de Usuários</h1>
+    <form method="post"><!-- Método post: envio -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="Ex.: 00000000000"><br>
+
+        <label for="datanasc">Data de nascimento:</label>
+        <input type="date" id="datanasc" name="datanasc" placeholder="Ex.: dd/mm/aaaa"><br>
+
+        <label for="sexo">Sexo:</label>
+        <input type="radio" id="sexo" value="F" name="sexo">
+        <label for="sexo">Feminino</label>
+        <input type="radio" id="sexo" value="F" name="sexo">
+        <label for="sexo">Masculino</label><br>
+
+
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo"><br>
+
+        <input type="submit" value="Cadastrar">
+
+    </form>
 </body>
 </html>
