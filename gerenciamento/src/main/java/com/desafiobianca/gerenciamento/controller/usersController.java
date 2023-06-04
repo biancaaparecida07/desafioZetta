@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +19,17 @@ public class usersController {
     private List<Usuario> usuarios = new ArrayList<>(); //Armazenamento inicial em lista. 
  
     /*Quando uma requisição com a URL /usuarios é recebida, a Servlet do Spring analisa a URL e identifica qual controlador está mapeado para /usuários. */
-    @GetMapping //verbo HTTP
-    public String carregaPaginaFormulario(){
+
+    @GetMapping("/formulario")//verbo HTTP
+    public String carregaPaginaFormulario() {
         return "usuarios/formulario";
     }
 
+    @GetMapping
+    public String carregaPaginaListagem(Model model) {
+        model.addAttribute("lista", usuarios);
+        return "usuarios/listagem";
+    }
 
     @PostMapping
     public String cadastraUser(DadosCadastroUsuario dados){

@@ -1,7 +1,5 @@
 package com.desafiobianca.gerenciamento.domain.usuario;
 
-import java.sql.Date;
-
 public class Usuario extends Pessoa{
     private String cargo;
 
