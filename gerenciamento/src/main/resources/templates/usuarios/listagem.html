@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{template.html}"> <!-- uso do ~para referenciar um arquivo e não uma variável.-->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
 </head>
 <body>
-    <h1>Lista de Usuários</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>NOME</th>
-                <th>CPF</th>
-                <th>DATA DE NASCIMENTO</th>
-                <th>SEXO</th>
-                <th>CARGO</th>
-                <th>DATA DE CADASTRO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="usuario : ${lista}"> <!--atributo que vincula o thymeleaf permitindo fazer o loop. O controller envia a variágel lista necessária. -->
-                <td th:text="${usuario.nome}"></td>
-                <td th:text="${usuario.cpf}"></td>
-                <td th:text="${usuario.datanasc}"></td>
-                <td th:text="${usuario.sexo}"></td>
-                <td th:text="${usuario.cargo}"></td>
-                <td th:text="${usuario.dataCadastro}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div layout:fragment="conteudo">
+        <h1>Lista de Usuários</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>CPF</th>
+                    <th>DATA DE NASCIMENTO</th>
+                    <th>SEXO</th>
+                    <th>CARGO</th>
+                    <th>DATA DE CADASTRO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${lista}"> <!--atributo que vincula o thymeleaf permitindo fazer o loop. O controller envia a variágel lista necessária. -->
+                    <td th:text="${usuario.nome}"></td>
+                    <td th:text="${usuario.cpf}"></td>
+                    <td th:text="${usuario.datanasc}"></td>
+                    <td th:text="${usuario.sexo}"></td>
+                    <td th:text="${usuario.cargo}"></td>
+                    <td th:text="${usuario.dataCadastro}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
