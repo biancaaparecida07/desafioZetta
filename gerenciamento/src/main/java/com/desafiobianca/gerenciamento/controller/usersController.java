@@ -36,7 +36,8 @@ public class usersController {
         var usuario = new Usuario(dados);
         usuarios.add(usuario);
         System.out.println(usuarios);
-        return "usuarios/formulario";
+
+        return "redirect:/usuarios"; //uso da palavra chave redirect que é um recurdo do spring com a url para redirecionar e então não duplica código do método carregaPaginaListagem. O redirect é via método get, então é como se estivéssemos chamando o carregaPaginaListagem. Então não precisamos também passar o Model novamente e nem editar a variavel lista em vários lugares caso um dia altere algo. 
     }
     
 }
