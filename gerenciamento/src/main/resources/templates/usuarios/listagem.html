@@ -15,6 +15,7 @@
                     <th>SEXO</th>
                     <th>CARGO</th>
                     <th>DATA DE CADASTRO</th>
+                    <th>AÇÕES</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,13 @@
                     <td th:text="${usuario.sexo}"></td>
                     <td th:text="${usuario.cargo}"></td>
                     <td th:text="${usuario.dataCadastro}"></td>
+                    <td>
+                        <form action="/usuarios" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="cpf" th:value="${usuario.cpf}">
+                            <input type="submit" value="Excluir">
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
