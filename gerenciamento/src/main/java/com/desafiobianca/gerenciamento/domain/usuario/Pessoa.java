@@ -2,12 +2,16 @@ package com.desafiobianca.gerenciamento.domain.usuario;
 
 import java.sql.Date;
 
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Pessoa {
     private String nome;
+    @Id
     private String cpf;
     private Date datanasc;
     private Character sexo;
-
 
     public Pessoa(String nome, String cpf, Date datanasc, Character sexo) {
         this.nome = nome;
@@ -15,7 +19,9 @@ public abstract class Pessoa {
         this.datanasc = datanasc;
         this.sexo = sexo;
     }
-    
+
+    public Pessoa(){}
+
     public String getNome() {
         return nome;
     }
