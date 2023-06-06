@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{template.html}">
+<head>
+    <title>Alteração de Usuários</title>
+</head>
+<body>
+    <div layout:fragment="conteudo">
+        <h1>Cadastro de Usuários</h1>
+        <form method="post" action="/usuarios"><!-- Método post: envio -->
+                <label for="nome">Nome:</label>
+                <input required type="text" id="nome" name="nome" th:value="${usuario.nome}"><br>
+
+                <label for="cpf">CPF:</label>
+                <input required readonly type="text" id="cpf" name="cpf" placeholder="Ex.: 00000000000" th:value="${usuario.cpf}"><br>
+
+                <label for="datanasc">Data de nascimento:</label>
+                <input required type="date" id="datanasc" name="datanasc" placeholder="Ex.: dd/mm/aaaa" th:value="${usuario.datanasc}"><br>
+
+                <label for="sexo">Sexo:</label>
+                <input required type="text" id="sexo" name="sexo" th:value="${usuario.sexo}" placeholder="Ex.: F ou M"><br>
+
+                <label for="cargo">Cargo:</label>
+                <input requiredtype="text" id="cargo" name="cargo" th:value="${usuario.cargo}"><br>
+
+            <input type="submit" value="Alterar">
+        </form>
+    </div>
+</body>
+</html>

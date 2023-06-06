@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{template.html}"> <!-- uso do ~para referenciar um arquivo e não uma variável.-->
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> <!-- uso do ~para referenciar um arquivo e não uma variável.-->
 <head>
     <title>Lista de Usuários</title>
 </head>
 <body>
     <div layout:fragment="conteudo">
         <h1>Lista de Usuários</h1>
+        <a href="/usuarios/formulario">Novo Usuário</a>
         <table>
             <thead>
                 <tr>
@@ -27,6 +28,7 @@
                     <td th:text="${usuario.cargo}"></td>
                     <td th:text="${usuario.dataCadastro}"></td>
                     <td>
+                        <a th:href="@{/usuarios/formeditar?cpf={cpf}(cpf=${usuario.cpf})}">Editar</a>
                         <form action="/usuarios" method="post">
                             <input type="hidden" name="_method" value="delete">
                             <input type="hidden" name="cpf" th:value="${usuario.cpf}">
