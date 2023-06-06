@@ -1,0 +1,40 @@
+Gerenciamento de Usuários - Desafio Zetta
+Participante: Bianca Aparecida Alves Araújo
+
+Linguagens utilizadas:Java
+Banco de Dados utilizado: MYSQL
+Sistema de controle de versões: Git
+Arquitetura adotada: MVC
+Model: src/main/java/com/desafiobianca/gerenciamento/domain
+View: src/main/resources/templates/
+Controller: src/main/java/com/desafiobianca/gerenciamento/controller
+Framework utilizado: Spring Boot
+Gerenciador de dependências: Maven
+Dependências:
+Spring Boot DevTools
+JPA Api
+Spring Web
+Thymeleaf
+IDEs utilizadas:Visual Studio Code, MYSQL Workbench
+
+Passo a passo - Utilização: 
+
+Para iniciar a aplicação, basta executar o arquivo: GerenciamentoApplication.java que se encontra no seguite diretório: ./desafioZetta/gerenciamento/src/main/java/com/desafiobianca/gerenciamento
+
+O banco de dados, nomeado por gerenciamento, será inicializado pela aplicação mas não será criada a tabela. Por isso, é necessário que seja criada manualmente por meio do seguinte comando: 
+
+create table usuarios(
+	nome varchar(100) not null,
+	cpf varchar(100) not null,
+	datanasc date not null,
+	sexo varchar(100) not null,
+	cargo varchar(100) not null,
+	datacadastro datetime not null,
+	primary key(cpf)
+);
+
+O usuário e senha para o banco estão ambos como admin. 
+
+A visualização web poderá ser aberta através da seguinte url: http://localhost:8080/usuarios
+Por meio desta url, já será dado acesso para as outras páginas de alteração e formulário de cadastro.
+
